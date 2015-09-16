@@ -21,7 +21,7 @@
 
 		function getFactors(dividend) {
 			var factorList = new Array();
-			for (var j = dividend - 1; j > 0; j--) {
+			for (var j = Math.round(dividend / 2); j > 1; j--) {
 				if (dividend % j === 0) {
 					factorList.push(j);
 				}
@@ -30,7 +30,7 @@
 		} 
 
 		function isPrime(num) {
-			if (getFactors(num).length === 1) {
+			if (getFactors(num).length === 0) {
 				return true;
 			}
 			return false;
