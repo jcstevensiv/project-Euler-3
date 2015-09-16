@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Project Euler 3</title>
+	</head>
+
+	<body>
+
+	<script type="text/javascript">
+		var number = parseInt(prompt("Enter a positive number"));
+		var largestPrime = number;
+
+		var factors = getFactors(number);
+		for (var i = 0; i < factors.length; i++) {
+			if (isPrime(factors[i])) {
+				largestPrime = factors[i];
+				break;
+			}
+		}
+
+		function getFactors(dividend) {
+			var factorList = new Array();
+			for (var j = dividend - 1; j > 0; j--) {
+				if (dividend % j === 0) {
+					factorList.push(j);
+				}
+			}
+			return factorList;
+		} 
+
+		function isPrime(num) {
+			if (getFactors(num).length === 1) {
+				return true;
+			}
+			return false;
+		}
+
+		document.write(largestPrime);
+	</script>
+
+	</body>
+</html>
